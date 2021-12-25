@@ -20,20 +20,23 @@ def get_word():
         # Find Example
         example=soup.find("div",class_="example").text
         # Find Author
-        author=""
+        author_and_date=""
         for i in soup.find("div",class_="contributor"):
             for j in i.string:
-                author+=j
-        author=author[3:]
-        without_date_author=author.split(" ")[0]
+                author_and_date+=j
+        for i in months:
+            if i in author_and_date:
+                new_author=author_and_date[3:author_and_date.find(i)].strip()
         # Find Date
-        date=author.split(" ")
-        date=" ".join(date[1:])
+        for i in months:
+            if i in author_and_date:
+                date=author_and_date.find(i)
+                date=author_and_date[date:].strip()
         json={
             "word":query.title(),
             "meaning":meaning.replace("None",""),
             "example":example,
-            "author":without_date_author,
+            "author":new_author,
             "date":date
         }
         return jsonify(json)
