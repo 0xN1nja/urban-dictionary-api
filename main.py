@@ -42,12 +42,19 @@ def get_word():
         }
         return jsonify(json)
     except:
+        try:
+            try_one_of_these_list=[]
+            for i in soup.find("ul"):
+                try_one_of_these_list.append(i.text)
+        except:
+            try_one_of_these_list=[]
         json={
             "word":query,
             "meaning":f"We Couldn't Find {query}",
-            "example":"null",
-            "author":"null",
-            "date":"null"
+            "example":None,
+            "author":None,
+            "date":None,
+            "try one of these":try_one_of_these_list
         }
         return jsonify(json)
 app.run(debug=True)
