@@ -26,7 +26,8 @@ def get_word():
                 author_and_date+=j
         for i in months:
             if i in author_and_date:
-                new_author=author_and_date[3:author_and_date.find(i)].strip()
+                author_location=author_and_date.find(i)
+                new_author=author_and_date[3:author_location].strip()
         # Find Date
         for i in months:
             if i in author_and_date:
