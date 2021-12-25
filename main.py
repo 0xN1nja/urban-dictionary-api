@@ -33,8 +33,8 @@ def get_word():
                 date_location=author_and_date.find(i)
                 date=author_and_date[date_location:].strip()
         json={
-            "word":query.title(),
-            "meaning":meaning.replace("None",""),
+            "word":query,
+            "meaning":meaning,
             "example":example,
             "author":new_author,
             "date":date
