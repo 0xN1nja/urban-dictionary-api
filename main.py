@@ -34,7 +34,7 @@ def get_word():
             "meaning":meaning.replace("None",""),
             "example":example,
             "author":without_date_author,
-            "date":date,
+            "date":date
         }
         return jsonify(json)
     except:
