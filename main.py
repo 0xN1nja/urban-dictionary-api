@@ -30,8 +30,8 @@ def get_word():
         # Find Date
         for i in months:
             if i in author_and_date:
-                date=author_and_date.find(i)
-                date=author_and_date[date:].strip()
+                date_location=author_and_date.find(i)
+                date=author_and_date[date_location:].strip()
         json={
             "word":query.title(),
             "meaning":meaning.replace("None",""),
