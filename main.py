@@ -19,7 +19,6 @@ def get_word():
         meaning=soup.find("div",class_="meaning").text
         # Find More Meanings
         more_meanings=[]
-        len_more_meanings=len(soup.find_all("div",class_="meaning"))
         for i,j in enumerate(soup.find_all("div",class_="meaning")):
             more_meanings.append(dict())
             more_meanings[i]["meaning"]=j.text
