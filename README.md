@@ -17,8 +17,8 @@ Python (Requests)
 import requests
 import json
 word="" # Enter A Word
-r=requests.get(f"https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}").content
-r=json.loads(r)
+res=requests.get(f"https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}").content
+res=json.loads(res)
 print(r)
 ```
 Node.js (Axios)
