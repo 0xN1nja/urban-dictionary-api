@@ -13,7 +13,7 @@ def welcome():
 def get_word():
     query=str(request.args.get("word"))
     data=requests.post(f"https://urbandictionary.com/define.php?term={query}").content
-    soup=BeautifulSoup(data)
+    soup=BeautifulSoup(data,"html.parser")
     try:
         # Find Meaning
         meaning=soup.find("div",class_="meaning").text
