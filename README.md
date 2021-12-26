@@ -3,13 +3,13 @@ A Simple API In Flask
 # Author
 Abhimanyu Sharma, https://github.com/N1nja0p
 ## Usage
-```bash
+```
 GET
 /api?word={word}
 ```
 ## Examples
 cURL
-```bash
+```
 curl https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}
 ```
 Python (Requests)
