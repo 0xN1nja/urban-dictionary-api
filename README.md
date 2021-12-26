@@ -23,7 +23,7 @@ print(r)
 ```
 Node.js (Axios)
 ```javascript
-const axios = require('axios');
+const axios=require('axios');
 const word=""; // Enter A Word
 axios.get(`https://urban-dictionary-api.n1nja0p.repl.co/api?word=${word}`)
 .then(res => console.log(res.data))
