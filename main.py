@@ -17,6 +17,23 @@ def get_word():
     try:
         # Find Meaning
         meaning=soup.find("div",class_="meaning").text
+        # Find More Meanings
+        more_meanings=[]
+        len_more_meanings=len(soup.find_all("div",class_="meaning"))
+        for i,j in enumerate(soup.find_all("div",class_="meaning")):
+            more_meanings.append(dict())
+            more_meanings[i]["meaning"]=j.text
+        for i,j in enumerate(soup.find_all("div",class_="example")):
+            more_meanings[i]["example"]=j.text
+        for month in months:
+            for i,j in enumerate(soup.find_all("div",class_="contributor")):
+                if month in j.text:
+                    more_meanings[i]["author"]=j.text[3:j.text.find(month)].strip()
+        for month in months:
+            for i,j in enumerate(soup.find_all("div",class_="contributor")):
+                if month in j.text:
+                    more_meanings[i]["date"]=j.text[j.text.find(month):].strip()
+        more_meanings=more_meanings[1:]
         # Find Example
         example=soup.find("div",class_="example").text
         # Find Author
@@ -38,7 +55,8 @@ def get_word():
             "meaning":meaning,
             "example":example,
             "author":new_author,
-            "date":date
+            "date":date,
+            "more_meanings":more_meanings
         }
         return jsonify(json)
     except:
@@ -54,6 +72,7 @@ def get_word():
             "example":None,
             "author":None,
             "date":None,
+            "more_meanings":[],
             "try one of these":try_one_of_these_list
         }
         return jsonify(json)
