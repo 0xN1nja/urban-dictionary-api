@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask import render_template
 from bs4 import BeautifulSoup
 import requests
 app=Flask(__name__)
@@ -8,7 +9,13 @@ app.config['JSON_SORT_KEYS']=False
 months=["January","February","March","April","May","June","July","August","September","October","November","December"]
 @app.get("/")
 def welcome():
-    return "Welcome To Urban Dictionary API By Abhimanyu Sharma!"
+    return '''
+    <style>
+        a{
+            text-decoration:none;
+        }
+    </style>
+    <a href="https://github.com/N1nja0p/Urban-Dictionary-API-Unofficial/blob/master/README.md">Read Docs</a>'''
 @app.get("/api")
 def get_word():
     query=str(request.args.get("word"))
