@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
-from flask import render_template
 from bs4 import BeautifulSoup
 import requests
 app=Flask(__name__)
