@@ -24,21 +24,24 @@ def get_word():
         # Find Meaning
         meaning=soup.find("div",class_="meaning").text
         # Find More Meanings
-        more_meanings=[]
-        for i,j in enumerate(soup.find_all("div",class_="meaning")):
-            more_meanings.append(dict())
-            more_meanings[i]["meaning"]=j.text
-        for i,j in enumerate(soup.find_all("div",class_="example")):
-            more_meanings[i]["example"]=j.text
-        for month in months:
-            for i,j in enumerate(soup.find_all("div",class_="contributor")):
-                if month in j.text:
-                    more_meanings[i]["author"]=j.text[3:j.text.find(month)].strip()
-        for month in months:
-            for i,j in enumerate(soup.find_all("div",class_="contributor")):
-                if month in j.text:
-                    more_meanings[i]["date"]=j.text[j.text.find(month):].strip()
-        more_meanings=more_meanings[1:]
+        try:
+            more_meanings=[]
+            for i,j in enumerate(soup.find_all("div",class_="meaning")):
+                more_meanings.append(dict())
+                more_meanings[i]["meaning"]=j.text
+            for i,j in enumerate(soup.find_all("div",class_="example")):
+                more_meanings[i]["example"]=j.text
+            for month in months:
+                for i,j in enumerate(soup.find_all("div",class_="contributor")):
+                    if month in j.text:
+                        more_meanings[i]["author"]=j.text[3:j.text.find(month)].strip()
+            for month in months:
+                for i,j in enumerate(soup.find_all("div",class_="contributor")):
+                    if month in j.text:
+                        more_meanings[i]["date"]=j.text[j.text.find(month):].strip()
+            more_meanings=more_meanings[1:]
+        except:
+            more_meanings=[]
         # Find Example
         example=soup.find("div",class_="example").text
         # Find Author
