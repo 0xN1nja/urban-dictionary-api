@@ -1,6 +1,6 @@
 # Urban Dictionary API (Unofficial)
 A Simple API In Flask 
-# Author :
+# Author
 Abhimanyu Sharma, https://github.com/N1nja0p
 ## Usage
 ```bash
