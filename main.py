@@ -58,12 +58,15 @@ def get_word():
             if i in author_and_date:
                 date_location=author_and_date.find(i)
                 date=author_and_date[date_location:].strip()
+        # Mug Link
+        mug_link=soup.find("a",class_="mug-ad")["href"]
         json={
             "word":query,
             "meaning":meaning,
             "example":example,
             "author":new_author,
             "date":date,
+            "mug_link":mug_link,
             "more_meanings":more_meanings
         }
         return jsonify(json)
@@ -80,6 +83,7 @@ def get_word():
             "example":None,
             "author":None,
             "date":None,
+            "mug_link":None,
             "more_meanings":[],
             "try one of these":try_one_of_these_list
         }
