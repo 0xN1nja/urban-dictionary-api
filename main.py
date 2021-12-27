@@ -60,6 +60,9 @@ def get_word():
                 date=author_and_date[date_location:].strip()
         # Mug Link
         mug_link=soup.find("a",class_="mug-ad")["href"]
+        print(mug_link)
+        # Mug Image
+        mug_image=f"https://urbandictionary.store/render/preview/mug/front.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&word={query}"
         json={
             "word":query,
             "meaning":meaning,
@@ -67,6 +70,7 @@ def get_word():
             "author":new_author,
             "date":date,
             "mug_link":mug_link,
+            "mug_image":mug_image,
             "more_meanings":more_meanings
         }
         return jsonify(json)
@@ -84,6 +88,7 @@ def get_word():
             "author":None,
             "date":None,
             "mug_link":None,
+            "mug_image":None,
             "more_meanings":[],
             "try one of these":try_one_of_these_list
         }
