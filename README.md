@@ -16,15 +16,15 @@ Python (Requests)
 ```python
 import requests
 import json
-word="" # Enter A Word
+word = "" # Enter A Word
 res=requests.get(f"https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}").content
 res=json.loads(res)
 print(res)
 ```
 Node.js (Axios)
 ```javascript
-const axios=require('axios');
-const word=""; // Enter A Word
+const axios = require('axios');
+const word = ""; // Enter A Word
 axios.get(`https://urban-dictionary-api.n1nja0p.repl.co/api?word=${word}`)
 .then(res=>console.log(res.data))
 .catch(err=>console.log(err));
