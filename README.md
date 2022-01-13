@@ -1,7 +1,7 @@
 # Urban Dictionary API (Unofficial)
 A Simple API In Flask 
 # Author
-Abhimanyu Sharma, https://github.com/N1nja0p
+Abhimanyu Sharma, https://github.com/0xN1nja
 ## Usage
 ```
 GET
@@ -59,4 +59,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 ## License
-[MIT](https://github.com/N1nja0p/Urban-Dictionary-API-Unofficial/blob/master/LICENCE.txt)
+[MIT](https://github.com/0xN1nja/Urban-Dictionary-API-Unofficial/blob/master/LICENCE.txt)
