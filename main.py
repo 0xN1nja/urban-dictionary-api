@@ -14,7 +14,7 @@ def welcome():
             text-decoration:none;
         }
     </style>
-    <a href="https://github.com/N1nja0p/Urban-Dictionary-API-Unofficial/blob/master/README.md" target="_blank">Read Docs</a>'''
+    <a href="https://github.com/0xN1nja/Urban-Dictionary-API-Unofficial/blob/master/README.md" target="_blank">Read Docs</a>'''
 @app.get("/api")
 def get_word():
     query=str(request.args.get("word"))
