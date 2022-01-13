@@ -2,12 +2,12 @@
 A Simple API In Flask 
 # Author
 Abhimanyu Sharma, https://github.com/0xN1nja
-## Usage
+# Usage
 ```
 GET
 /api?word={word}
 ```
-## Examples
+# Examples
 cURL
 ```
 curl https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}
@@ -54,9 +54,9 @@ val request = Request.Builder()
 	.build()
 val response = client.newCall(request).execute()
 ```
-## Contributing
+# Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-## License
+# License
 [MIT](https://github.com/0xN1nja/Urban-Dictionary-API-Unofficial/blob/master/LICENCE.txt)
