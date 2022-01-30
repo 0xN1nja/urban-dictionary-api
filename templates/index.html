@@ -14,8 +14,8 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="im">import</span> requests</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="im">import</span> json</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>word <span class="op">=</span> <span class="st">&quot;&quot;</span> <span class="co"># Enter A Word</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>res<span class="op">=</span>requests.get(<span class="ss">f&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word=</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">&quot;</span>).content</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>res<span class="op">=</span>json.loads(res)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>res <span class="op">=</span> requests.get(<span class="ss">f&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word=</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">&quot;</span>).content</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>res <span class="op">=</span> json.loads(res)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="bu">print</span>(res)</span></code></pre></div>
 <p>Node.js (Axios)</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">const</span> axios <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;axios&#39;</span>)<span class="op">;</span></span>
