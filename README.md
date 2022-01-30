@@ -10,14 +10,14 @@ GET
 # Examples
 cURL
 ```
-curl https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}
+curl https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}
 ```
 Python (Requests)
 ```python
 import requests
 import json
 word = "" # Enter A Word
-res = requests.get(f"https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}").content
+res = requests.get(f"https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}").content
 res = json.loads(res)
 print(res)
 ```
@@ -25,7 +25,7 @@ Node.js (Axios)
 ```javascript
 const axios = require('axios');
 const word = ""; // Enter A Word
-axios.get(`https://urban-dictionary-api.n1nja0p.repl.co/api?word=${word}`)
+axios.get(`https://urban-dictionary-api.0xN1nja.repl.co/api?word=${word}`)
 .then(res=>console.log(res.data))
 .catch(err=>console.log(err));
 ```
@@ -33,13 +33,13 @@ C# (WebClient)
 ```csharp
 WebClient client = new WebClient();
 var word = ""; // Enter A Word
-string reply = client.DownloadString($"https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}");
+string reply = client.DownloadString($"https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}");
 Console.WriteLine(reply);
 ```
 Java (java.net.http)
 ```java
 HttpRequest request = HttpRequest.newBuilder()
-     .uri(URI.create("https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}")) // Enter A Word
+     .uri(URI.create("https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}")) // Enter A Word
      .method("GET", HttpRequest.BodyPublishers.noBody())
      .build();
 HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
@@ -49,7 +49,7 @@ Kotlin (OkHttp)
 ```kotlin
 val client = OkHttpClient()
 val request = Request.Builder()
-	.url("https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}") // Enter A Word
+	.url("https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}") // Enter A Word
 	.get()
 	.build()
 val response = client.newCall(request).execute()
