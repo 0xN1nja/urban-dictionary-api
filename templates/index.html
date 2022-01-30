@@ -1,49 +1,65 @@
-<h1 id="urban-dictionary-api-unofficial">Urban Dictionary API (Unofficial)</h1>
-<p>A Simple API In Flask</p>
-<h1 id="author">Author</h1>
-<p>Abhimanyu Sharma, <a href="https://github.com/0xN1nja">https://github.com/0xN1nja</a></p>
-<h1 id="usage">Usage</h1>
-<pre><code>GET
-/api?word={word}
-</code></pre>
-<h1 id="examples">Examples</h1>
-<p>cURL</p>
-<pre><code>curl https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}
-</code></pre>
-<p>Python (Requests)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="im">import</span> requests</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="im">import</span> json</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>word <span class="op">=</span> <span class="st">&quot;&quot;</span> <span class="co"># Enter A Word</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>res <span class="op">=</span> requests.get(<span class="ss">f&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word=</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">&quot;</span>).content</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>res <span class="op">=</span> json.loads(res)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="bu">print</span>(res)</span></code></pre></div>
-<p>Node.js (Axios)</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">const</span> axios <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;axios&#39;</span>)<span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">const</span> word <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span> <span class="co">// Enter A Word</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>axios<span class="op">.</span><span class="fu">get</span>(<span class="vs">`https://urban-dictionary-api.n1nja0p.repl.co/api?word=</span><span class="sc">${</span>word<span class="sc">}</span><span class="vs">`</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="op">.</span><span class="fu">then</span>(res<span class="kw">=&gt;</span><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(res<span class="op">.</span><span class="at">data</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="op">.</span><span class="fu">catch</span>(err<span class="kw">=&gt;</span><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(err))<span class="op">;</span></span></code></pre></div>
-<p>C# (WebClient)</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>WebClient client = <span class="kw">new</span> <span class="fu">WebClient</span>();</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="dt">var</span> word = <span class="st">&quot;&quot;</span>; <span class="co">// Enter A Word</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="dt">string</span> reply = client.<span class="fu">DownloadString</span>($<span class="st">&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}&quot;</span>);</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>Console.<span class="fu">WriteLine</span>(reply);</span></code></pre></div>
-<p>Java (java.net.http)</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>HttpRequest request = HttpRequest.<span class="fu">newBuilder</span>()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>     .<span class="fu">uri</span>(<span class="bu">URI</span>.<span class="fu">create</span>(<span class="st">&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}&quot;</span>)) <span class="co">// Enter A Word</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>     .<span class="fu">method</span>(<span class="st">&quot;GET&quot;</span>, HttpRequest.<span class="fu">BodyPublishers</span>.<span class="fu">noBody</span>())</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>     .<span class="fu">build</span>();</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>HttpResponse&lt;<span class="bu">String</span>&gt; response = HttpClient.<span class="fu">newHttpClient</span>().<span class="fu">send</span>(request, HttpResponse.<span class="fu">BodyHandlers</span>.<span class="fu">ofString</span>());</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(response.<span class="fu">body</span>());</span></code></pre></div>
-<p>Kotlin (OkHttp)</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">val</span> <span class="va">client</span> = OkHttpClient()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="kw">val</span> <span class="va">request</span> = Request.Builder()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    .url(<span class="st">&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}&quot;</span>) <span class="co">// Enter A Word</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    .<span class="kw">get</span>()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    .build()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="kw">val</span> <span class="va">response</span> = client.newCall(request).execute()</span></code></pre></div>
-<h1 id="contributing">Contributing</h1>
-<p>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</p>
-<p>Please make sure to update tests as appropriate.</p>
-<h1 id="license">License</h1>
-<p><a href="https://github.com/0xN1nja/Urban-Dictionary-API-Unofficial/blob/master/LICENCE.txt">MIT</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Dictionary API | Documentation</title>
+</head>
+<body>
+    <style>
+        html{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <h1 id="urban-dictionary-api-unofficial">Urban Dictionary API (Unofficial)</h1>
+    <p>A Simple API In Flask</p>
+    <h1 id="author">Author</h1>
+    <p>Abhimanyu Sharma, <a href="https://github.com/0xN1nja">https://github.com/0xN1nja</a></p>
+    <h1 id="usage">Usage</h1>
+    <pre><code>GET
+    /api?word={word}
+    </code></pre>
+    <h1 id="examples">Examples</h1>
+    <p>cURL</p>
+    <pre><code>curl https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}
+    </code></pre>
+    <p>Python (Requests)</p>
+    <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="im">import</span> requests</span>
+    <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="im">import</span> json</span>
+    <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>word <span class="op">=</span> <span class="st">&quot;&quot;</span> <span class="co"># Enter A Word</span></span>
+    <span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>res <span class="op">=</span> requests.get(<span class="ss">f&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word=</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">&quot;</span>).content</span>
+    <span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>res <span class="op">=</span> json.loads(res)</span>
+    <span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="bu">print</span>(res)</span></code></pre></div>
+    <p>Node.js (Axios)</p>
+    <div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">const</span> axios <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;axios&#39;</span>)<span class="op">;</span></span>
+    <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">const</span> word <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span> <span class="co">// Enter A Word</span></span>
+    <span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>axios<span class="op">.</span><span class="fu">get</span>(<span class="vs">`https://urban-dictionary-api.n1nja0p.repl.co/api?word=</span><span class="sc">${</span>word<span class="sc">}</span><span class="vs">`</span>)</span>
+    <span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="op">.</span><span class="fu">then</span>(res<span class="kw">=&gt;</span><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(res<span class="op">.</span><span class="at">data</span>))</span>
+    <span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="op">.</span><span class="fu">catch</span>(err<span class="kw">=&gt;</span><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(err))<span class="op">;</span></span></code></pre></div>
+    <p>C# (WebClient)</p>
+    <div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>WebClient client = <span class="kw">new</span> <span class="fu">WebClient</span>();</span>
+    <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="dt">var</span> word = <span class="st">&quot;&quot;</span>; <span class="co">// Enter A Word</span></span>
+    <span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="dt">string</span> reply = client.<span class="fu">DownloadString</span>($<span class="st">&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}&quot;</span>);</span>
+    <span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>Console.<span class="fu">WriteLine</span>(reply);</span></code></pre></div>
+    <p>Java (java.net.http)</p>
+    <div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>HttpRequest request = HttpRequest.<span class="fu">newBuilder</span>()</span>
+    <span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>     .<span class="fu">uri</span>(<span class="bu">URI</span>.<span class="fu">create</span>(<span class="st">&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}&quot;</span>)) <span class="co">// Enter A Word</span></span>
+    <span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>     .<span class="fu">method</span>(<span class="st">&quot;GET&quot;</span>, HttpRequest.<span class="fu">BodyPublishers</span>.<span class="fu">noBody</span>())</span>
+    <span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>     .<span class="fu">build</span>();</span>
+    <span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>HttpResponse&lt;<span class="bu">String</span>&gt; response = HttpClient.<span class="fu">newHttpClient</span>().<span class="fu">send</span>(request, HttpResponse.<span class="fu">BodyHandlers</span>.<span class="fu">ofString</span>());</span>
+    <span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(response.<span class="fu">body</span>());</span></code></pre></div>
+    <p>Kotlin (OkHttp)</p>
+    <div class="sourceCode" id="cb7"><pre class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">val</span> <span class="va">client</span> = OkHttpClient()</span>
+    <span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="kw">val</span> <span class="va">request</span> = Request.Builder()</span>
+    <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    .url(<span class="st">&quot;https://urban-dictionary-api.n1nja0p.repl.co/api?word={word}&quot;</span>) <span class="co">// Enter A Word</span></span>
+    <span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    .<span class="kw">get</span>()</span>
+    <span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    .build()</span>
+    <span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="kw">val</span> <span class="va">response</span> = client.newCall(request).execute()</span></code></pre></div>
+    <h1 id="contributing">Contributing</h1>
+    <p>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</p>
+    <p>Please make sure to update tests as appropriate.</p>
+    <h1 id="license">License</h1>
+    <p><a href="https://github.com/0xN1nja/Urban-Dictionary-API-Unofficial/blob/master/LICENCE.txt">MIT</a></p>
+</body>
+</html>
