@@ -36,7 +36,7 @@ def get_word():
                     if month in j.text:
                         more_meanings[i]["date"]=j.text[j.text.find(month):].strip()
             for i,j in enumerate(soup.find_all("div",class_="meaning")):
-                more_meanings[i]["mug_back_image"]=f"https://urbandictionary.store/render/preview/mug/back.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&meaning={j.text}&word={query}".replace(" ","%20")
+                more_meanings[i]["mug_back_image"]=f"https://urbandictionary.store/render/preview/mug/back.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&meaning={j.text}&word={query}".replace(" ","%20").replace("'","").replace('"',"")
             more_meanings=more_meanings[1:]
         except:
             more_meanings=[]
@@ -59,9 +59,9 @@ def get_word():
         # Mug Link
         mug_link=soup.find("a",class_="mug-ad")["href"]
         # Mug Front Image
-        mug_front_image=f"https://urbandictionary.store/render/preview/mug/front.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&word={query}".replace(" ","%20")
+        mug_front_image=f"https://urbandictionary.store/render/preview/mug/front.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&word={query}".replace(" ","%20").replace("'","").replace('"',"")
         # Mug Back Image
-        mug_back_image=f"https://urbandictionary.store/render/preview/mug/back.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&meaning={meaning}&word={query}".replace(" ","%20")
+        mug_back_image=f"https://urbandictionary.store/render/preview/mug/back.jpg?bg=FFF200&fg=000000&fill=FFFFFF&logo-variant=dark&meaning={meaning}&word={query}".replace(" ","%20").replace("'","").replace('"',"")
         json={
             "word":query,
             "meaning":meaning,
