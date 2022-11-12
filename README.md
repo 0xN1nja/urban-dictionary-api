@@ -1,5 +1,5 @@
 # Urban Dictionary API (Unofficial)
-A Simple API In Flask 
+Urban Dictionary API Written In Python's Flask Framework
 # Author
 Abhimanyu Sharma, https://github.com/0xN1nja
 # Usage
