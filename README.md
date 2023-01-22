@@ -1,7 +1,9 @@
 # Urban Dictionary API (Unofficial)
 Urban Dictionary API Written In Python's Flask Framework
+
 # Author
 Abhimanyu Sharma, https://github.com/0xN1nja
+
 # Usage
 ```
 GET
@@ -12,7 +14,7 @@ cURL
 ```
 curl https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}
 ```
-Python (Requests)
+Python (requests)
 ```python
 import requests
 import json
@@ -21,42 +23,32 @@ res = requests.get(f"https://urban-dictionary-api.0xN1nja.repl.co/api?word={word
 res = json.loads(res)
 print(res)
 ```
-Node.js (Axios)
-```javascript
+Node.js (axios)
+```typescript
 const axios = require('axios');
 const word = ""; // Enter A Word
 axios.get(`https://urban-dictionary-api.0xN1nja.repl.co/api?word=${word}`)
 .then(res=>console.log(res.data))
 .catch(err=>console.log(err));
 ```
-C# (WebClient)
-```csharp
-WebClient client = new WebClient();
-var word = ""; // Enter A Word
-string reply = client.DownloadString($"https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}");
-Console.WriteLine(reply);
-```
-Java (java.net.http)
-```java
-HttpRequest request = HttpRequest.newBuilder()
-     .uri(URI.create("https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}")) // Enter A Word
-     .method("GET", HttpRequest.BodyPublishers.noBody())
-     .build();
-HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-System.out.println(response.body());
-```
-Kotlin (OkHttp)
-```kotlin
-val client = OkHttpClient()
-val request = Request.Builder()
-	.url("https://urban-dictionary-api.0xN1nja.repl.co/api?word={word}") // Enter A Word
-	.get()
-	.build()
-val response = client.newCall(request).execute()
+Rust (reqwest)
+```rust
+use std::collections::HashMap;
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let word = "" // Enter A Word
+    let res = reqwest::get("https://urban-dictionary-api.0xn1nja.repl.co/api?word={:?}",word)
+        .await?
+        .json::<HashMap<String, String>>()
+        .await?;
+    println!("{:#?}", res);
+    Ok(())
+}
 ```
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
 # License
 [MIT](https://github.com/0xN1nja/Urban-Dictionary-API-Unofficial/blob/master/LICENCE.txt)
