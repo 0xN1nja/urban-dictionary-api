@@ -34,6 +34,7 @@ axios.get(`https://urban-dictionary-api.0xN1nja.repl.co/api?word=${word}`)
 Rust (reqwest)
 ```rust
 use std::collections::HashMap;
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let word = "" // Enter A Word
