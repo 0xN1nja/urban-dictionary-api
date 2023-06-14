@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: urban-dictionary-api-unofficial-service
+  labels:
+    app: urban-dictionary-api-unofficial-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: urban-dictionary-api-unofficial
+  sessionAffinity: None

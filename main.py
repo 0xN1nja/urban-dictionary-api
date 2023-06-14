@@ -94,4 +94,4 @@ def get_word():
             "try one of these":try_one_of_these_list
         }
         return jsonify(json)
-app.run(debug=True)
+app.run(debug=True,port=5000)

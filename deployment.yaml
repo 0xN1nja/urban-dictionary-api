@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: urban-dictionary-api-unofficial-deployment
+  labels:
+    app: urban-dictionary-api-unofficial
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: urban-dictionary-api-unofficial
+  template:
+    metadata:
+      labels:
+        app: urban-dictionary-api-unofficial
+    spec:
+      containers:
+      - name: urban-dictionary-api-unofficial
+        image: n1nja0p/urban-dictionary-api-unofficial
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9999
