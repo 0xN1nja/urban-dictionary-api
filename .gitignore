@@ -1,6 +1,4 @@
 .idea
-.vs
 .vscode
 templates
 __pycache__
-.env

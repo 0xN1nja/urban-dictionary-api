@@ -7,10 +7,10 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: http
-    port: 8000
-    protocol: TCP
-    targetPort: 5000
+    - name: http
+      port: 9999
+      protocol: TCP
+      targetPort: 8000
   selector:
     app: urban-dictionary-api-unofficial
   sessionAffinity: None
