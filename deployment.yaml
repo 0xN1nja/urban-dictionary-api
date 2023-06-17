@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: urban-dictionary-api-unofficial
-          image: n1nja0p/urban-dictionary-api-unofficial
+          image: n1nja0p/urban-dictionary-api-unofficial:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
