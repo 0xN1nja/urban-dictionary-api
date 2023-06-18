@@ -38,7 +38,7 @@ use std::collections::HashMap;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let word = "" // Enter A Word
-    let res = reqwest::get("https://urban-dictionary-api.0xn1nja.repl.co/api?word={:?}",word)
+    let res = reqwest::get("https://urban-dictionary-api.0xN1nja.repl.co/api?word={:?}",word)
         .await?
         .json::<HashMap<String, String>>()
         .await?;
