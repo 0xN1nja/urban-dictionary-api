@@ -1,5 +1,5 @@
 # Urban Dictionary API
-An API For Urban Dictionary Written In Flask
+An API For Scraping Urban Dictionary
 
 # Author
 Abhimanyu Sharma, https://github.com/0xN1nja
